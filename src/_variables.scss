@@ -1,0 +1,25 @@
+//global colors
+$main-color: #e0e0e0;
+$text-color: #001f3f;
+$text-disabled: rgba(#001f3f, 0.5);
+
+//mixins
+@mixin flex($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin neumorphic($radius, $distance, $inset) {
+  border-radius: $radius;
+  background: $main-color;
+
+  @if $inset {
+    box-shadow: inset $distance $distance $distance * 2 #a4a4a4,
+      inset (-$distance) (-$distance) ($distance * 2) #ffffff;
+  } @else {
+    box-shadow: $distance $distance $distance * 2 #a4a4a4,
+      (-$distance) (-$distance) ($distance * 2) #ffffff;
+  }
+}

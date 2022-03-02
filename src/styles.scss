@@ -1,16 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
-@mixin flex($direction) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: $direction;
-}
+@import "./variables";
 
 body {
+  color: $text-color;
+  font-family: Muli, sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
+  background: $main-color;
   @include flex(column);
 }

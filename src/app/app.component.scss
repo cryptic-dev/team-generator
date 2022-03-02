@@ -1,3 +1,52 @@
+@import "../styles.scss";
+
+input {
+  padding: 10px;
+  appearance: none;
+  border: none;
+  outline: none;
+  color: $text-color;
+  font-weight: 600;
+  @include neumorphic(2px, 1px, true);
+  transition: all 100ms ease-in;
+
+  &:focus {
+    @include neumorphic(2px, 1px, false);
+    transform: scaleX(1.01);
+  }
+
+  &::placeholder {
+    color: $text-disabled;
+    font-weight: 400;
+  }
+}
+
+button {
+  cursor: pointer;
+  width: 150px;
+  margin: 2px 10px;
+  font-weight: 600;
+  color: $text-color;
+  padding: 10px;
+  appearance: none;
+  border: none;
+  @include neumorphic(2px, 1px, false);
+
+  &:hover {
+    @include neumorphic(2px, 2px, false);
+  }
+
+  &:active {
+    @include neumorphic(2px, 1px, false);
+  }
+}
+
 .gen-container {
-  background: red;
+  background: $main-color;
+  padding: 50px;
+  @include neumorphic(5px, 2px, false);
+}
+
+.player-add__container {
+  @include flex(row);
 }
