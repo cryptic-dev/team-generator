@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@mixin flex($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  @include flex(column);
+}
