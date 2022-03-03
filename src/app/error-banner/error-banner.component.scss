@@ -1,0 +1,19 @@
+@import "../../animations.scss";
+@import "../../variables";
+
+.error-banner__container {
+  font-weight: 600;
+  padding: 5px 20px;
+  border-radius: 5px;
+  @include neumorphic(5px, 10px, false);
+  border: solid 2pt $error-color;
+
+  h4 {
+    color: $error-color;
+  }
+
+  * {
+    margin: 15px 0;
+    padding: 0;
+  }
+}

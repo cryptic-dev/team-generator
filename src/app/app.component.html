@@ -2,24 +2,52 @@
   <div class="gen-container">
     <h2>Team Generator</h2>
 
-    <ul>
-      <li>azoul fallwe</li>
-      <li>name two</li>
-      <li>name three</li>
-    </ul>
+    <app-error-banner *ngIf="hasError" [errorMessage]="errorMessage">
+    </app-error-banner>
+
+    <p>
+      Player count:
+      <span class="player-count-number">{{ players.length }}</span>
+    </p>
+
+    <div class="players-container" *ngIf="finalTeams.length == 0">
+      <div class="player-name" *ngFor="let player of players">{{ player }}</div>
+    </div>
+
+    <div class="players-container" *ngIf="finalTeams.length != 0">
+      <div *ngFor="let team of finalTeams; index as i">
+        <h3>TEAM {{ i + 1 }}</h3>
+        <div
+          class="player-name"
+          [style.background]="'hsl(' + i * 60 + ',50%,42%)'"
+          *ngFor="let player of team"
+        >
+          {{ player }}
+        </div>
+      </div>
+    </div>
 
     <hr />
 
     <div class="player-add__container">
-      <input type="text" placeholder="player name" />
-      <button>Add</button>
+      <input
+        #playerAddInput
+        type="text"
+        placeholder="player name"
+        [(ngModel)]="newPlayerName"
+      />
+      <button (click)="addNewPlayer()">Add</button>
     </div>
 
     <hr />
 
     <div>
-      <input type="number" placeholder="number of teams" />
-      <button>Generate Teams</button>
+      <input
+        type="number"
+        placeholder="number of teams"
+        [(ngModel)]="numberOfTeams"
+      />
+      <button (click)="generateTeams()">Generate Teams</button>
     </div>
   </div>
 </div>
