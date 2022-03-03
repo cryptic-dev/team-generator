@@ -87,6 +87,9 @@ export class AppComponent {
       return;
     }
 
+    //reset errors
+    this.reset();
+
     //suffle players
     this.shufflePlayers();
 
