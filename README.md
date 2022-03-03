@@ -1,4 +1,7 @@
-# Stock
+# Team generator app
+A simple app that takes player names and generates random teams.
+
+[DEMO](https://stupefied-banach-39e23a.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
